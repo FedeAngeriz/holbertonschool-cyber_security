@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo fping -sn "$1"
+sudo nmap -sn "$1"
