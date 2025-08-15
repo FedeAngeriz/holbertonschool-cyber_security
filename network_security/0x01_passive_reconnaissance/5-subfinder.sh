@@ -1,2 +1,2 @@
 #!/bin/bash
-subfinder -d "$1"
+subfinder -silent -d $1
