@@ -1,2 +1,2 @@
 #!/bin/bash
-dig -q=ANY "$1"
+dig +noall +answer any $1
