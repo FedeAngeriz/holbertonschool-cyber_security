@@ -1,0 +1,1 @@
+tcp.len == 0 and (tcp.flags.syn == 1 || tcp.flags.ack == 1)
