@@ -1,1 +1,1 @@
-f_name, l_name, role 
+f_name, l_name
