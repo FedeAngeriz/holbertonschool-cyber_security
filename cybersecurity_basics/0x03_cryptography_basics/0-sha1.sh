@@ -1,1 +1,1 @@
-echo "$1" | sha1sum
+echo -n "$1" | sha1sum
