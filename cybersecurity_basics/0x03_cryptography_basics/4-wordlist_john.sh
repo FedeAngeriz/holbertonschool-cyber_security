@@ -1,2 +1,2 @@
 #!/bin/bash
-john --format=raw-sha1 --wordlist=/usr/share/wordlists/rockyou.txt "$1"
+john --format=raw-sha1 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
