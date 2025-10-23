@@ -1,2 +1,2 @@
 #!/bin/bash
-hashcat --stdout -a wordlist1.txt wordlist2.txt > combined_wordlist.txt
+hashcat --stdout -a "$1" "$2" > combined_wordlist.txt
