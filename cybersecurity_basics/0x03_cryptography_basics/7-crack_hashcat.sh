@@ -1,2 +1,2 @@
 #!/bin/bash
-hashcat -m 0 -a 0 hash.txt /usr/share/wordlists/rockyou.txt --quiet 2>/dev/null || true && printf '<%s>\n' "$(hashcat --show -m 0 hash.txt 2>/dev/null | awk -F: 'NF>=2{print $NF}' | paste -sd, - )" > 7-password.txt
+hashcat -m 0 -a 0 hash.txt /usr/share/wordlists/rockyou.txt --quiet 2>/dev/null || true && printf '<%s>\n' "$(hashcat --show -m 0 "$1" 2>/dev/null | awk -F: 'NF>=2{print $NF}' | paste -sd, - )" > 7-password.txt
