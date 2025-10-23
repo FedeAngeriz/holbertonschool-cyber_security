@@ -1,2 +1,2 @@
 #!/bin/bash
-john --show --format=raw-sha1 crack.txt
+john --show "$1" > 6-password.txt
