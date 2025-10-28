@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "STARTTLS not configured"
+grep -q "STARTTLS" /etc/postfix/main.cf || echo "STARTTLS not configured"
