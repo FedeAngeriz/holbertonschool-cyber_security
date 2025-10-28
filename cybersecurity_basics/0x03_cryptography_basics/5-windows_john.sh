@@ -1,2 +1,2 @@
 #!/bin/bash
-john --format=nt --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+john --wordlist=/usr/share/wordlists/rockyou.txt --format=NT $1
