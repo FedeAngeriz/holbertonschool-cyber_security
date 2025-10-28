@@ -1,2 +1,2 @@
 #!/bin/bash
-grep public snmpwalk -v2c -c public "$1"
+grep public /etc/snmp/snmpd.conf
