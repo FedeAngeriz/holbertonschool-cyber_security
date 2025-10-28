@@ -1,2 +1,2 @@
 #!/bin/bash
-snmpwalk -v2c -c public "$1"
+grep snmpwalk -v2c -c public "$1"
