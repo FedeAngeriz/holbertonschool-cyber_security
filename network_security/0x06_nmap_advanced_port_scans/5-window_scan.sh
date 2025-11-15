@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo nmap -sW -p 20-30 "$1" "$2" "$3"
+sudo nmap -sW -p -exclude-ports 25-28 20-30 "$1" "$2" "$3"
