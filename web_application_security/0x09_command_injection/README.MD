@@ -1,1 +1,0 @@
-web_application_security/0x09_command_injection
