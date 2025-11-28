@@ -1,43 +1,59 @@
 #!/usr/bin/python3
+
+"""
+Script Heat edit
+"""
+
 import sys
 
-def main():
 
+def main():
+    """Main function"""
     if len(sys.argv) != 4:
-        print("Uso: text_search, pide, text_replace")
+        print("Uso: pid text_search text_replace")
         sys.exit(1)
-    
+
     pid = sys.argv[1]
     text_search = sys.argv[2]
     text_replace = sys.argv[3]
     if len(text_search) != len(text_replace):
         print("text_search y text_replace deben tener la misma longitud")
         sys.exit(1)
-    
-    with open(f"/proc/{pid}/maps", "r") as maps_file:
-        for line in maps_file:
-            if "[heap]" in line:
-                heap_info = line.split(" ")
-                heap_address = heap_info[0]
-                break
-    
-    heap_start, heap_end = [int(x, 16) for x in heap_address.split("-")]
-    heap_size = heap_end - heap_start
 
-    with open(f"/proc/{pid}/mem", "r+b", 0) as mem_file:
-        mem_file.seek(heap_start)
-        heap_data = mem_file.read(heap_size)
+    maps_file = f"/proc/{pid}/maps"
+    mem_path = f"/proc/{pid}/mem"
+
+    heap_start = None
+    heap_end = None
+
+    with open(maps_file, "r") as maps:
+        for line in maps:
+            if "[heap]" in line:
+                parts = line.split()
+                start, end = parts[0].split("-")
+                heap_start = int(start, 16)
+                heap_end = int(end, 16)
+                break
+
+    if heap_start is None:
+        print(f"No se encontró la región heap para el proceso {pid}")
+        sys.exit(1)
+
+    with open(mem_path, "r+b", 0) as mem:
+        mem.seek(heap_start)
+        heap_data = mem.read(heap_end - heap_start)
 
         index = heap_data.find(text_search.encode())
         if index == -1:
-            print(f"No se encontró '{text_search}' en el heap del proceso {pid}")
-            sys.exit(1)
-        
-        print(f"Encontrado '{text_search}' en el heap del proceso {pid} en la posición {hex(heap_start + index)}")
+            print(f"No se encontró en el heap del proceso")
+            sys.exit(0)
 
-        mem_file.seek(heap_start + index)
-        mem_file.write(text_replace.encode())
-        print(f"Reemplazado '{text_search}' por '{text_replace}' en el heap del proceso {pid}")
+        print(f"Encontrado en el heap del proceso")
+
+        mem.seek(heap_start + index)
+        mem.write(text_replace.encode())
+        print(f"Reemplazado en el heap del proceso")
+
 
 if __name__ == "__main__":
     main()
