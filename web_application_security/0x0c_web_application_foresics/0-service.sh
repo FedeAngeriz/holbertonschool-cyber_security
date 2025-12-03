@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -ri "sshd" /var/log/auth.log > /dev/null && echo "sshd"
+grep -ri "sshd" /var/log/ > /dev/null && echo "sshd"
