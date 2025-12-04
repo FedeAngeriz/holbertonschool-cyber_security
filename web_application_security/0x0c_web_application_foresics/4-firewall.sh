@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -ie "iptable" auth.log | wc -l
+grep -ie "iptables" auth.log | wc -l
