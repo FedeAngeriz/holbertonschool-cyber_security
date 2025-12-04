@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -ei "useradd|new user|added user" auth.log
+grep -Ei "useradd|new user|added user" auth.log
