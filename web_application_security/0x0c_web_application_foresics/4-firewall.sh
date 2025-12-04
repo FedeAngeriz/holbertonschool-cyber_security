@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -ie "iptables .* (-A|-I)" auth.log | wc -l
+grep -ie "iptables .* -A" auth.log | wc -l
