@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -i "Accepted password for" auth.log | awk '{print $9}' | sort -u
+grep -i "Accepted password" auth.log | awk '{print $9}' | sort -u
