@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-def hello_world(str)
+def say_hello(str)
   puts "Hello, Holberton! from ·#{str}"
 end
