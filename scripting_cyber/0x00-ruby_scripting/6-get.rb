@@ -1,16 +1,17 @@
 #!/usr/bin/env ruby
 require 'net/http'
-require 'uri'
 require 'json'
 
 def get_request(url)
-    uri = URI.parse(url)
+    uri = URI(url)
     response = Net::HTTP.get_response(uri)
 
-    output = {
-        status: response.code,
-        body: response.body
-    }
+    status_code = response.code
+    status_message = response.message
 
-    puts JSON.pretty_generate(output)
+    responde_body = JSON.parse(response.body)
+
+    puts "Response status: #{status_code} #{status_message}"
+    puts "Response body:"
+    puts JSON.pretty_generate(responde_body)
 end
