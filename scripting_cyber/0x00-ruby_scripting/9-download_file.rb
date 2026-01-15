@@ -14,3 +14,13 @@ def download_file(url, path)
         end
     end
 end
+
+if ARGV.length != 2
+    puts "Usage: ruby download.rb <URL> <PATH>"
+    exit 1
+end
+
+url = ARGV[0]
+path = ARGV[1]
+
+download_file(url, path)
