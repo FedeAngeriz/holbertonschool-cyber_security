@@ -20,7 +20,7 @@ OptionParser.new do |opts|
         options[:remove] = index
     end
     
-    opts.on('.h', '--help', 'Show help') do
+    opts.on('-h', '--help', 'Show help') do
         puts opts
         exit
     end
