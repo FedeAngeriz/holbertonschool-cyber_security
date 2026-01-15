@@ -17,7 +17,7 @@ def dictionary_attack(hashed_password, dictionary_file)
 end
 
 if ARGV.length != 2
-    puts "Usage: ruby crack.rb <hashed_password> <dictionary_file>"
+    puts "Usage: 10-password_cracked.rb HASHED_PASSWORD DICTIONARY_FILE"
     exit 1
 end
 
