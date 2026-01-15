@@ -13,17 +13,16 @@ OptionParser.new do |opts|
     end
 
     opts.on('-l', '--list', 'List all tasks') do
-    elsif options[:list]
-        puts "Tasks:"
-        puts
+        elsif options[:list]
+            puts "Tasks:"
+            puts
 
-        File.readlines(TASK_FILE).each_with_index do |task, index|
-        puts "#{index + 1}. #{task.chomp} "
+            File.readlines(TASK_FILE).each_with_index do |task, index|
+                puts "#{index + 1}. #{task.chomp} "
+            end
+            puts
+        end
     end
-
-    puts
-    end
-
     opts.on('-r INDEX', '--remove INDEX', Integer, 'Remove a task by index') do |index|
         options[:remove] = index
     end
