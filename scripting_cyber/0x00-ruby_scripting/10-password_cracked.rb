@@ -13,7 +13,7 @@ def dictionary_attack(hashed_password, dictionary_file)
         end
     end
 
-    puts "Password not found in the dictionary."
+    puts "Password not found in dictionary."
 end
 
 if ARGV.length != 2
