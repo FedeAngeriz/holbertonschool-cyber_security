@@ -33,7 +33,6 @@ if options[:add]
 
 elsif options[:list]
   puts "Tasks:"
-  puts
 
   File.readlines(TASK_FILE).each_with_index do |task, index|
     puts "#{index + 1}. #{task.chomp}"
