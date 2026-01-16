@@ -16,7 +16,7 @@ def download_file(url, path)
 end
 
 if ARGV.length != 2
-    puts "Usage: 9-download_file.rb <URL> <PATH>"
+    puts "Usage: 9-download_file.rb URL LOCAL_FILE_PATH"
     exit 1
 end
 
