@@ -36,7 +36,7 @@ elsif options[:list]
   puts
 
   File.readlines(TASK_FILE).each_with_index do |task, index|
-    puts "#{index + 1}. #{task.chomp} "
+    puts "#{index + 1}. #{task.chomp}"
   end
 
   puts
