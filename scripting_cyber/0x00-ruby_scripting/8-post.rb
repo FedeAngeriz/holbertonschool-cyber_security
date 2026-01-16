@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require 'net/http'
 require 'uri'
+require 'json'
 
 def post_request(url, body_params)
     uri = URI(url)
