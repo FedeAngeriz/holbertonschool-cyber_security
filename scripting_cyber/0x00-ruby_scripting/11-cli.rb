@@ -38,8 +38,6 @@ elsif options[:list]
     puts "#{index + 1}. #{task.chomp}"
   end
 
-  puts
-
 elsif options[:remove]
   tasks = File.readlines(TASK_FILE)
   index = options[:remove] - 1
