@@ -29,7 +29,7 @@ File.write(TASK_FILE, '') unless File.exist?(TASK_FILE)
 
 if options[:add]
   File.open(TASK_FILE, 'a') { |file| file.puts options[:add] }
-  puts "Task '#{options[:add]}' added."
+  puts "Task'#{options[:add]}' added."
 
 elsif options[:list]
   puts "Tasks:"
@@ -48,6 +48,6 @@ elsif options[:remove]
   if index >= 0 && index < tasks.length
     removed_task = tasks.delete_at(index)
     File.open(TASK_FILE, 'w') { |file| file.write(tasks.join) }
-    puts "Task '#{removed_task.chomp}' removed."
+    puts "Task'#{removed_task.chomp}' removed."
   end
 end
