@@ -12,4 +12,4 @@ Description:
 The script ensures persistence by executing automatically when the user logs in.
 
 Flag01:
-05809C521098E03F0BCC7CC878399D0F
+05809c521098e03f0bcc7cc878399d0f
